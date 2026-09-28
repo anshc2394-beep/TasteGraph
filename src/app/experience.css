@@ -1,0 +1,373 @@
+/* TasteGraph's editorial layer: cream canvas, forest ink, coral for active data. */
+:root {
+  --surface: #fffefa;
+  --surface-tint: #edf1e6;
+  --forest: #203b31;
+  --accent: #e99377;
+  --radius-ui: 6px;
+  --space-section: clamp(48px, 6vw, 88px);
+}
+
+/* Quiet hierarchy lets artwork and changing rank carry the visual weight. */
+.content-section {
+  margin-top: var(--space-section);
+}
+.section-heading h2 {
+  font-family: Georgia, serif;
+  font-size: clamp(28px, 2.7vw, 41px);
+  letter-spacing: -1.4px;
+  line-height: 1.12;
+  font-weight: 400;
+}
+.section-number {
+  width: 26px;
+  height: 26px;
+  font-family: Georgia, serif;
+}
+.eyebrow {
+  letter-spacing: 1.5px;
+}
+.range-row {
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 18px;
+}
+.range-switch {
+  gap: 8px;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+}
+.range-switch button {
+  position: relative;
+  border-radius: 0;
+  padding: 11px 16px 13px;
+  color: var(--muted);
+  font-size: 12px;
+  min-width: 88px;
+}
+.range-switch button.selected {
+  background: transparent;
+  box-shadow: none;
+  color: var(--ink);
+}
+.range-switch button:hover {
+  color: var(--ink);
+}
+.range-switch button > span:first-child {
+  position: relative;
+  z-index: 1;
+}
+.range-indicator {
+  position: absolute;
+  height: 2px;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  background: var(--accent);
+}
+.range-caption {
+  font-size: 11px;
+}
+
+/* The score is a comparison across lenses, not a circular completion meter. */
+.drift-value {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-end;
+  gap: 9px;
+  font-variant-numeric: tabular-nums;
+}
+.drift-value strong {
+  color: var(--surface);
+  font-size: clamp(72px, 8vw, 120px);
+  line-height: 0.9;
+  font-weight: 400;
+  letter-spacing: -7px;
+}
+.drift-value span {
+  font-size: 13px;
+  color: #bfd0bc;
+}
+
+/* Portrait rhythm follows listening rank; artwork never needs a card border. */
+
+/* Graph uses rank for prominence and Spotify's first genre tag for peer edges. */
+
+.tracks-table {
+  border-top-color: var(--ink);
+}
+.track-row {
+  border-bottom-color: #dce3da;
+  min-height: 66px;
+}
+.track-row:not(.table-label):hover {
+  background: #edf1e6;
+}
+.track-info .artwork {
+  width: 49px;
+  height: 49px;
+  border-radius: 2px;
+}
+.track-info h3 {
+  font-size: 13px;
+}
+.show-more {
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 5px;
+}
+.insights-grid {
+  gap: 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.insight-card {
+  border: 0;
+  border-right: 1px solid var(--line);
+  border-radius: 0;
+  background: transparent;
+  padding: 26px 22px;
+}
+.insight-card:last-child {
+  border-right: 0;
+}
+.overlap-panel {
+  border-radius: 2px;
+}
+.journey {
+  margin: 25px 0 30px;
+  padding: 30px;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--line);
+  background: #f0f2ea;
+}
+.journey-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+  align-items: start;
+}
+.journey-header h3 {
+  font:
+    400 clamp(24px, 2.3vw, 34px)/1.15 Georgia,
+    serif;
+  margin: 9px 0;
+  letter-spacing: -0.8px;
+}
+.journey-header p:not(.eyebrow) {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+.journey-header > span {
+  font-size: 9px;
+  letter-spacing: 1.1px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.journey-choices {
+  display: grid;
+}
+.journey-choices button {
+  position: relative;
+  display: grid;
+  grid-template-columns: 25px 36px minmax(0, 1fr);
+  gap: 10px;
+  align-items: center;
+  text-align: left;
+  min-height: 53px;
+  font-size: 12px;
+  border-bottom: 1px solid #d8dfd4;
+  padding: 6px 5px 6px 0;
+}
+.journey-choices button.selected {
+  font-weight: 600;
+}
+.journey-choices button i {
+  position: absolute;
+  inset: 7px auto 7px -10px;
+  border-left: 2px solid var(--accent);
+}
+.journey-choices button .artwork {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+}
+.journey-choices button > span:last-of-type {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.journey-index {
+  color: #87543f;
+  font-family: Georgia, serif;
+}
+.journey-chart {
+  min-width: 0;
+}
+.journey-chart svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.journey-guide {
+  stroke: #ced8cb;
+  stroke-width: 1;
+  stroke-dasharray: 2 5;
+}
+.journey-axis {
+  fill: #52665a;
+  font:
+    11px Arial,
+    sans-serif;
+}
+.journey-line {
+  stroke: #728a78;
+  stroke-width: 2;
+}
+.journey-line.active {
+  stroke: #b65f43;
+  stroke-width: 3;
+}
+.journey-point {
+  fill: #728a78;
+}
+.journey-point.active {
+  fill: #b65f43;
+  stroke: #f0f2ea;
+  stroke-width: 2;
+}
+.journey-rank {
+  fill: #874d38;
+  font:
+    12px Arial,
+    sans-serif;
+  font-weight: 700;
+}
+.journey-chart > p {
+  color: var(--muted);
+  font-size: 10px;
+  margin-top: 5px;
+  text-align: center;
+  line-height: 1.5;
+}
+.skeleton-nav {
+  display: grid;
+  gap: 19px;
+  margin-top: 20px;
+}
+.skeleton-nav span {
+  height: 15px;
+  width: 72%;
+  border-radius: 2px;
+  background: #395044;
+}
+.skeleton-nav span:nth-child(2) {
+  width: 55%;
+}
+.skeleton-nav span:nth-child(3) {
+  width: 64%;
+}
+.skeleton-nav span:nth-child(4) {
+  width: 59%;
+}
+
+@media (max-width: 1200px) {
+  .drift-value strong {
+    font-size: 77px;
+  }
+}
+@media (max-width: 950px) {
+  .insights-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .insight-card {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .insight-card:last-child {
+    border-bottom: 0;
+  }
+}
+@media (max-width: 700px) {
+  .skeleton-nav {
+    display: none;
+  }
+  .range-row {
+    margin: 24px 0 18px;
+    padding-bottom: 0;
+    align-items: end;
+  }
+  .range-switch {
+    gap: 0;
+  }
+  .range-switch button {
+    min-width: 0;
+    padding: 12px 11px 14px;
+    font-size: 11px;
+  }
+  .range-caption {
+    padding-bottom: 13px;
+    font-size: 9px;
+  }
+  .drift-value strong {
+    font-size: 58px;
+    letter-spacing: -3px;
+  }
+  .drift-value span {
+    font-size: 10px;
+  }
+  .content-section {
+    margin-top: 55px;
+  }
+  .section-heading h2 {
+    font-size: 27px;
+  }
+  .insights-grid {
+    grid-template-columns: 1fr;
+  }
+  .insight-card {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+    padding: 22px 4px;
+  }
+  .insight-card:last-child {
+    border-bottom: 0;
+  }
+  .journey {
+    padding: 22px 16px;
+  }
+  .journey-header {
+    display: block;
+  }
+  .journey-header > span {
+    display: none;
+  }
+  .journey-choices {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 7px;
+    scroll-snap-type: x mandatory;
+  }
+  .journey-choices button {
+    min-width: 145px;
+    max-width: 145px;
+    grid-template-columns: 22px 29px minmax(0, 1fr);
+    font-size: 10px;
+    scroll-snap-align: start;
+  }
+  .journey-choices button .artwork {
+    width: 27px;
+    height: 27px;
+  }
+  .journey-chart {
+    margin-top: 21px;
+  }
+}
+@media (max-width: 390px) {
+  .drift-value strong {
+    font-size: 44px;
+  }
+}

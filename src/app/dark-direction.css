@@ -1,0 +1,112 @@
+/* TasteGraph / after dark. Music artwork provides the color; the interface stays quiet. */
+:root {
+  --paper: #101110; --ink: #f2f3ee; --muted: #a3aaa1; --line: #343b34;
+  --coral: #a8ed70; --sage: #1d271e; --dark: #080b09;
+  --tg-ink: #f2f3ee; --tg-forest: #141a15; --tg-deep: #080b09;
+  --tg-paper: #101110; --tg-mist: #1b211c; --tg-coral: #a8ed70;
+  --tg-line: rgba(232,245,228,.18);
+  --radius-sm: 8px; --radius-md: 14px; --radius-lg: 22px;
+}
+body { background: #101110; color: #f2f3ee; }
+a:focus-visible,button:focus-visible,summary:focus-visible { outline-color: #b1f07a; }
+.brand-dot,.brand-mark i { color: #a8ed70; background: #a8ed70; }
+
+/* Landing: a record sleeve-scale composition with a graph that resolves into place. */
+.cinema-landing { background: #101110; color: #f2f3ee; }
+.cinema-nav { height: 82px; border-color: rgba(255,255,255,.12); background: linear-gradient(#080b09cc,transparent); }
+.cinema-nav > span { color: #b5bcb2; }
+.cinema-nav > a:last-child { border: 1px solid #9cdf76; border-radius: 100px; padding: 11px 18px; color: #b8f68b; transition: background .25s,color .25s; }
+.cinema-nav > a:last-child:hover { background: #a8ed70; color: #0b100b; }
+.cinema-hero { min-height: 110dvh; background: #070907; }
+.cinema-wash { background: radial-gradient(ellipse at 73% 49%,#1d291c 0%,#111713 28%,#090c0a 60%,#070907 83%); }
+.cinema-wash::after { background: linear-gradient(90deg,#070907 0%,#070907d9 29%,transparent 62%); }
+.cinema-graph { right: -2%; top: 9%; width: min(72vw,1100px); height: 78%; }
+.cinema-wires line { stroke: #a8ed70; stroke-width: 1.3px; }
+.cinema-wires circle { stroke: rgba(168,237,112,.18); stroke-dasharray: 2 5; }
+.cinema-core { background: #a8ed70; color: #101710; box-shadow: 0 0 0 1px #c7ff9c,0 0 0 20px #a8ed7015,0 0 0 45px #a8ed7009; }
+.cinema-core-rings { border-color: #1c3616; }
+.cinema-core > span:last-child { font-family: Arial,Helvetica,sans-serif; font-weight: 900; font-size: clamp(1.8rem,3vw,3rem); letter-spacing: -.11em; }
+.cinema-node { width: clamp(112px,12vw,190px); }
+.cinema-node > .demo-art { border: 1px solid #ffffff2e; border-radius: var(--radius-sm); box-shadow: 0 30px 80px #000a; }
+.demo-art { background-color: #202620; background-size: cover; background-position: center; }
+.art-one { background-image: url('/covers/the-great-escape.png'); }
+.art-two { background-image: url('/covers/the-diary-of-alicia-keys.png'); }
+.art-three { background-image: url('/covers/ye.png'); }
+.art-four { background-image: url('/covers/graduation.png'); }
+.cinema-node:focus-visible { outline-color: #a8ed70; }
+.cinema-node-caption strong { font-family: Arial,Helvetica,sans-serif; font-size: 1rem; letter-spacing: -.02em; }
+.cinema-headline { left: clamp(24px,5vw,80px); bottom: clamp(115px,17vh,190px); width: min(90vw,1150px); }
+.cinema-kicker { color: #a8ed70; font-size: .68rem; letter-spacing: .2em; }
+.cinema-headline h1 { font-family: Arial,Helvetica,sans-serif; font-size: clamp(5rem,10.7vw,12.5rem); font-weight: 900; letter-spacing: -.095em; line-height: .83; text-transform: uppercase; text-wrap: nowrap; }
+.cinema-headline h1 .hero-line { display: block; overflow: hidden; padding: 0 .08em .11em 0; margin-bottom: -.11em; }
+.cinema-headline h1 .hero-line > span { display: block; }
+.cinema-headline h1 em { font-family: Georgia,serif; text-transform: none; font-weight: 400; letter-spacing: -.09em; color: #a8ed70; }
+.cinema-deck { color: #bac2b8; max-width: 34ch; font-size: clamp(1rem,1.4vw,1.25rem); margin: clamp(23px,4vh,44px) 0 24px; }
+.cinema-cta { background: #a8ed70; border-color: #a8ed70; color: #0b100b; border-radius: 100px; min-width: 265px; padding: 18px 22px; box-shadow: 0 0 0 0 #a8ed7030; }
+.cinema-cta:hover { background: #c6ffa1; border-color: #c6ffa1; color: #0b100b; box-shadow: 0 0 0 8px #a8ed701e; }
+.cinema-cta:focus-visible { outline-color: #c6ffa1; }
+.demo-disclosure { color: #929c91; }
+.cinema-transition { background: #121612; color: #f2f3ee; min-height: 82dvh; }
+.transition-art { filter: brightness(.3) saturate(.7); background-position: center 46%; }
+.cinema-transition::before { background: linear-gradient(180deg,#080b09 0%,transparent 45%,#141a15 100%); }
+.cinema-transition p,.cinema-finale > p { color: #a8ed70; }
+.cinema-transition h2 { font-family: Arial,Helvetica,sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: -.075em; }
+.cinema-transition h2 em { font-family: Georgia,serif; font-weight: 400; text-transform: none; color: #a8ed70; }
+.cinema-story { background: #141a15; color: #f2f3ee; border-top: 1px solid #ffffff14; }
+.story-time { background: #1c231d; }
+.story-index { border-color: #a8ed70; color: #a8ed70; }
+.story-copy h2 { color: #f2f3ee; }
+.story-copy p { color: #b6c0b5; }
+.story-art-cluster span,.time-art { border-radius: var(--radius-md); }
+.cinema-finale { background: #080b09; }
+.cinema-finale h2 em { color: #a8ed70; }
+.cinema-finale small { color: #aab7aa; }
+.finale-orbit { border-color: #a8ed7038; }
+.finale-orbit span { border-radius: var(--radius-md); }
+.cinema-footer { background: #080b09; }
+
+/* Shared product shell: preserve the existing data composition and routes. */
+.universe-shell { background: #101110; color: #f2f3ee; }
+.universe-nav,.universe-nav nav { background: #101410ee; color: #f2f3ee; border-color: #ffffff1e; }
+.universe-nav nav a,.universe-profile { color: #d7dfd4; }
+.universe-nav nav a.active { color: #a8ed70; }
+.universe-artists-section { background: #101110; }
+.universe-tracks-section { background: #191e19; }
+.universe-section-intro > p,.universe-tracks-section .track-rank { color: #a8ed70; }
+.universe-tracks-section .track-row.table-label { color: #aab4aa; }
+.universe-tracks-section .tracks-table { border-color: #586259; }
+.universe-tracks-section .track-row { border-color: #ffffff20; }
+.universe-tracks-section .track-row:not(.table-label):hover { background: #273327; }
+.universe-evolution { background: #111812; }
+.universe-evolution .section-heading > span,.universe-evolution .journey-index,.universe-evolution .journey-header .eyebrow { color: #a8ed70; }
+.universe-evolution .journey-line.active { stroke: #a8ed70; }
+.universe-evolution .journey-point.active { fill: #a8ed70; }
+.universe-evolution .overlap-panel { background: #213322; }
+.universe-footer { background: #080b09; }
+
+@media (max-width: 900px) {
+  .cinema-graph { right: -14%; width: 94vw; }
+  .cinema-headline h1 { font-size: clamp(5rem,11vw,9rem); }
+  .universe-nav nav { background: #101410; }
+}
+@media (max-width: 650px) {
+  .cinema-nav { height: 68px; }
+  .cinema-nav > a:last-child { font-size: .7rem; padding: 9px 12px; }
+  .cinema-nav > a:last-child span { margin-left: 5px; }
+  .cinema-hero { min-height: 100dvh; }
+  .cinema-wash { background: radial-gradient(ellipse at 51% 30%,#263323 0%,#0e130f 45%,#070907 78%); }
+  .cinema-wash::after { background: linear-gradient(180deg,transparent 25%,#070907b0 57%,#070907 87%); }
+  .cinema-graph { width: 100vw; right: 0; top: 9vh; height: 46vh; }
+  .cinema-node { width: clamp(72px,21vw,106px); }
+  .cinema-headline { left: 20px; width: calc(100vw - 40px); bottom: 10vh; }
+  .cinema-headline h1 { font-size: clamp(3.25rem,12.8vw,5.6rem); letter-spacing: -.09em; }
+  .cinema-deck { font-size: .92rem; max-width: 31ch; }
+  .demo-disclosure { bottom: 21px; color: #aeb6ac; }
+  .cinema-transition h2 { font-size: clamp(2.8rem,10vw,4.8rem); }
+  .cinema-story { padding-top: 88px; padding-bottom: 88px; }
+  .cinema-finale h2 { font-size: clamp(4rem,14vw,6rem); }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,*::before,*::after { scroll-behavior: auto !important; }
+  .cinema-node,.cinema-cta { transition-duration: .01ms; }
+}

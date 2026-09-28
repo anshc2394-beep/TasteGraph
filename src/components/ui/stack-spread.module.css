@@ -1,0 +1,33 @@
+.sequence { position: relative; height: 240svh; background: #0c0e0c; color: #f1f3ec; }
+.stage { position: sticky; top: 0; height: 100svh; overflow: hidden; isolation: isolate; }
+.copy { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px; z-index: 1; }
+.copy h2 { font-family: var(--font-display),sans-serif; font-weight: 600; font-size: clamp(64px,7.4vw,112px); line-height: .94; letter-spacing: -.025em; margin: 0; }
+.copy h2 em { color: var(--accent); font-style: normal; }
+.copy p { font-size: clamp(14px,1.1vw,17px); line-height: 1.65; max-width: 40ch; margin: 26px 0 0; color: #b1baad; }
+.artwork { position: absolute; inset: 0; pointer-events: none; }
+.sleeve { position: absolute; left: 50%; top: 50%; width: clamp(140px,16vw,230px); aspect-ratio: 1; }
+.face { position: relative; width: 100%; height: 100%; border-radius: var(--radius-art,22px); overflow: hidden; box-shadow: 0 18px 36px #0005; background: #202420; }
+.face img { object-fit: cover; }
+@media (max-width: 1000px) and (min-width: 651px) {
+  .sleeve { width: 18vw; }
+  .copy h2 { font-size: 7.3vw; }
+  .copy p { max-width: 32ch; font-size: 14px; }
+}
+@media (max-width: 650px) {
+  .sleeve { --end-x: var(--mobile-x) !important; --end-y: var(--mobile-y) !important; width: 25vw; }
+  .sleeve:nth-child(n+7) { display: none; }
+  .face { border-radius: 14px; }
+  .copy h2 { font-size: clamp(42px,12vw,70px); }
+  .copy p { font-size: 14px; max-width: 29ch; margin-top: 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sequence { height: auto; }
+  .stage { position: relative; height: auto; min-height: 100svh; display: flex; flex-direction: column; justify-content: center; padding: 64px 24px; gap: 40px; }
+  .copy { position: relative; padding: 0; opacity: 1 !important; transform: none !important; }
+  .artwork { position: relative; display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 14px; width: min(720px,100%); margin: 0 auto; }
+  .sleeve { position: relative; left: auto; top: auto; width: 100%; transform: none !important; }
+  .face { transform: none !important; box-shadow: none; }
+}
+@media (prefers-reduced-motion: reduce) and (max-width: 650px) {
+  .artwork { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 10px; }
+}

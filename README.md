@@ -1,6 +1,10 @@
 # TasteGraph
 
-**[Live demo →](https://YOUR-PROJECT.vercel.app/demo)** (no account needed)
+**[Live demo →](https://taste-graph-xi.vercel.app/demo)** (no account needed)
+
+<a href="docs/demo.mp4"><img src="docs/demo-preview.webp" alt="TasteGraph walkthrough: the landing page, then the live demo's artist constellation, Taste Drift, and listening-window switching" width="100%"></a>
+
+<sub>Preview above. <a href="docs/demo.mp4">Watch the full two-minute walkthrough (MP4)</a>.</sub>
 
 A Next.js 16 / React 19 listening dashboard using your real Spotify profile and top music.
 
